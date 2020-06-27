@@ -1,11 +1,11 @@
 class ProductsController < ApplicationController
   def index
+    @products = []
     if cart.empty?
       @products = Product.all
     else
-      @products = []
       cart.each do |item|
-        @products << Product.find_or_create_by(name: item)
+        @products << Product.find_by_name(item)
       end
     end
   end
@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
     cart
     product = Product.find_or_create_by(name: params[:product])
     session[:cart] << product.name
-    redirect_to '/'
+    redirect_to products_path
   end
 
 

@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
     else
       @products = []
       cart.each do |item|
+        byebug
         @products << Product.find_or_create_by(name: item)
       end
     end
@@ -14,7 +15,7 @@ class ProductsController < ApplicationController
     cart
     product = Product.find_or_create_by(name: params[:product])
     session[:cart] << product.name
-    redirect_to '/'
+    redirect_to products_path
   end
 
 

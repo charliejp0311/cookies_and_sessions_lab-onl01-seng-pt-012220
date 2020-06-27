@@ -1,0 +1,7 @@
+<%= render partial: 'form', locals: {product: Product.new}%>
+<ol>
+<%@products.each do |item|%>
+    <li>
+    <%= item.name %><br/>
+    </li>
+<%end%>

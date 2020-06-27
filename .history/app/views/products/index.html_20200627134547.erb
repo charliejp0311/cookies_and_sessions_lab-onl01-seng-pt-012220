@@ -1,0 +1,10 @@
+<%= render partial: 'form', locals: {product: Product.new}%>
+<%if @products %>
+<%byebug%>
+<ol>
+<%@products.each do |item|%>
+    <li>
+    <%= item.name %><br/>
+    </li>
+<%end%>
+<%end%>

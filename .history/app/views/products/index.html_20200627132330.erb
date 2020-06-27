@@ -1,0 +1,8 @@
+<%= render partial: 'form', locals: {product: Product.new}%>
+<ol>
+<%session[:cart].each do |item|%>
+    <li>
+    <%= item %><br/>
+    </li>
+<%end%>
+</ol>
