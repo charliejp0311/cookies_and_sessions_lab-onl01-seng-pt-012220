@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20200627160549) do
 
   create_table "products", force: :cascade do |t|
-    t.string   "product"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
